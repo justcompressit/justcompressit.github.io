@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resize Image for WhatsApp DP, Instagram &amp; Passport Photo – Free | JustCompressIt</title>
+<meta name="description" content="Resize photos online for WhatsApp DP, WhatsApp status, Instagram profile, post and story, Facebook, YouTube thumbnail and passport size. Fit full photo without cropping. Free and private.">
+<meta property="og:title" content="Resize Image for WhatsApp DP, Instagram &amp; Passport Photo – Free | JustCompressIt">
+<meta property="og:description" content="Resize photos online for WhatsApp DP, WhatsApp status, Instagram profile, post and story, Facebook, YouTube thumbnail and passport size. Fit full photo without cropping. Free and private.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 12l7 7 7-7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- ===== Google AdSense: paste your AdSense <script> here after approval ===== -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do I set a full photo as my WhatsApp DP without cropping?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose WhatsApp DP, then tap “Fit whole photo (no crop)”. Your entire photo fits inside the square with a blurred or coloured background around it, so nothing gets cut off. Download and set it as your profile picture."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the best size for a WhatsApp profile picture?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A square image of at least 500 × 500 pixels works best. WhatsApp shows it as a circle, so keep your face in the middle – the circle guide in the preview shows exactly what will be visible."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I post a full photo on Instagram without cropping?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pick Instagram post (1080 × 1080) or Instagram portrait (1080 × 1350), choose “Fit whole photo” and a background. The whole picture is kept and Instagram won’t crop it."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I make a passport-size photo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose Passport 35×45 mm, zoom so your head fills most of the frame and download. For a white background, first use our background changer. Always check the exact rules of the office you are applying to."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Will resizing reduce the quality?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Photos are resized with high-quality smoothing. Making a small photo much bigger can look soft, but shrinking a photo keeps it sharp."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></i>JustCompressIt</a>
+    <nav aria-label="Tools"><a href="index.html">Compress</a><a href="jpg-to-pdf.html">JPG to PDF</a><a href="pdf-to-jpg.html">PDF to JPG</a><a href="resize-image.html" class=on>Resize Image</a><a href="guides.html">Guides</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Resize Image for WhatsApp, Instagram &amp; More</h1>
+    <p>Make the perfect <strong>WhatsApp DP, Instagram post, story or passport photo</strong>. Crop exactly, or fit the whole photo without cutting anything off.</p>
+    <div class="badges"><span class="badge">🔒 Files never leave your device</span><span class="badge">Free</span><span class="badge">No sign-up</span><span class="badge">No watermark</span></div>
+  </div>
+
+  <div class="card">
+    <div class="drop" id="drop" tabindex="0">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>
+      <strong>Choose a photo to resize</strong>
+      <span>JPG, PNG or WebP · then pick WhatsApp, Instagram, passport or a custom size</span>
+      <input type="file" id="input" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp" hidden>
+    </div>
+
+    <div class="editor hidden" id="editor">
+      <div>
+        <div class="stage">
+          <div class="frame" id="frame"><canvas id="cv"></canvas><div class="circle hidden" id="circle"></div></div>
+        </div>
+        <p class="hint" id="hint" style="text-align:center">Drag the photo to move it · use Zoom to fit your face in the frame</p>
+      </div>
+
+      <div class="panel">
+        <h3>Size</h3>
+        <div class="chips" id="presets"></div>
+        <div class="row hidden" id="customRow" style="margin-top:10px;gap:6px">
+          <input type="number" id="cw" min="16" max="8000" value="1000" aria-label="Width"><span class="meta">×</span>
+          <input type="number" id="ch" min="16" max="8000" value="1000" aria-label="Height"><span class="meta">px</span>
+        </div>
+
+        <h3>Mode</h3>
+        <div class="chips" id="modes">
+          <button class="chip" data-mode="crop" aria-pressed="true">Crop to fill</button>
+          <button class="chip" data-mode="fit" aria-pressed="false">Fit whole photo (no crop)</button>
+        </div>
+
+        <div id="bgWrap" class="hidden">
+          <h3>Background around photo</h3>
+          <div class="swatches" id="bgs">
+            <button class="swatch" data-bg="blur" aria-pressed="true" title="Blurred photo" style="background:linear-gradient(135deg,#94a3b8,#cbd5e1)">≈</button>
+            <button class="swatch" data-bg="#ffffff" aria-pressed="false" title="White"></button>
+            <button class="swatch" data-bg="#000000" aria-pressed="false" title="Black" style="background:#000"></button>
+            <button class="swatch" data-bg="#0f766e" aria-pressed="false" title="Green" style="background:#0f766e"></button>
+            <button class="swatch" data-bg="custom" aria-pressed="false" title="Pick a colour" style="background:conic-gradient(red,yellow,lime,aqua,blue,magenta,red)"><input type="color" id="pick" value="#f472b6"></button>
+          </div>
+        </div>
+
+        <h3>Zoom</h3>
+        <input type="range" id="zoom" min="100" max="400" value="100">
+
+        <h3>Save as</h3>
+        <select id="fmt">
+          <option value="image/jpeg" selected>JPG</option>
+          <option value="image/png">PNG</option>
+        </select>
+
+        <div class="actions" style="margin-top:18px">
+          <button class="btn" id="dl">Download</button>
+          <button class="btn ghost" id="change">Change photo</button>
+        </div>
+        <p class="hint" id="outInfo"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Ad slot 1 (below tool) -->
+  <div class="ad">Advertisement</div>
+
+  <section class="content">
+    <h2>How to resize a photo</h2>
+    <div class="steps"><div class="step"><b>1</b><h3 style="margin:0 0 4px">Choose a photo</h3>Pick any picture from your gallery or computer.</div><div class="step"><b>2</b><h3 style="margin:0 0 4px">Pick a size</h3>Tap WhatsApp DP, Instagram, Story, Passport or enter your own width and height.</div><div class="step"><b>3</b><h3 style="margin:0 0 4px">Adjust and download</h3>Drag and zoom to frame it, or choose “Fit whole photo” to avoid cropping. Then download.</div></div>
+
+    <h2>Popular image sizes</h2>
+    <table>
+      <tr><th>Use</th><th>Size (pixels)</th><th>Shape</th></tr>
+      <tr><td>WhatsApp profile picture (DP)</td><td>500 × 500</td><td>Square, shown as circle</td></tr>
+      <tr><td>WhatsApp status / Instagram story / Reel</td><td>1080 × 1920</td><td>Vertical 9:16</td></tr>
+      <tr><td>Instagram profile picture</td><td>320 × 320</td><td>Square, shown as circle</td></tr>
+      <tr><td>Instagram post</td><td>1080 × 1080</td><td>Square</td></tr>
+      <tr><td>Instagram portrait post</td><td>1080 × 1350</td><td>4:5</td></tr>
+      <tr><td>Facebook cover photo</td><td>851 × 315</td><td>Wide</td></tr>
+      <tr><td>YouTube thumbnail</td><td>1280 × 720</td><td>16:9</td></tr>
+      <tr><td>Passport photo (35 × 45 mm)</td><td>413 × 531</td><td>Portrait</td></tr>
+    </table>
+
+    <h2 id="faq">Frequently asked questions</h2>
+<h3>How do I set a full photo as my WhatsApp DP without cropping?</h3>
+<p>Choose WhatsApp DP, then tap “Fit whole photo (no crop)”. Your entire photo fits inside the square with a blurred or coloured background around it, so nothing gets cut off. Download and set it as your profile picture.</p>
+<h3>What is the best size for a WhatsApp profile picture?</h3>
+<p>A square image of at least 500 × 500 pixels works best. WhatsApp shows it as a circle, so keep your face in the middle – the circle guide in the preview shows exactly what will be visible.</p>
+<h3>How do I post a full photo on Instagram without cropping?</h3>
+<p>Pick Instagram post (1080 × 1080) or Instagram portrait (1080 × 1350), choose “Fit whole photo” and a background. The whole picture is kept and Instagram won’t crop it.</p>
+<h3>How do I make a passport-size photo?</h3>
+<p>Choose Passport 35×45 mm, zoom so your head fills most of the frame and download. Take the photo against a plain white or light background for best results. Always check the exact rules of the office you are applying to.</p>
+<h3>Will resizing reduce the quality?</h3>
+<p>Photos are resized with high-quality smoothing. Making a small photo much bigger can look soft, but shrinking a photo keeps it sharp.</p>
+
+    <h2>All free tools</h2>
+<div class="tools-grid"><a class="tool-link" href="index.html"><span class="ic">🗜️</span><b>Compress Image & PDF</b><span>Shrink files to 50 KB, 100 KB, 200 KB…</span></a><a class="tool-link" href="jpg-to-pdf.html"><span class="ic">📄</span><b>JPG to PDF</b><span>Turn photos and scans into one PDF</span></a><a class="tool-link" href="pdf-to-jpg.html"><span class="ic">🖼️</span><b>PDF to JPG</b><span>Save every PDF page as an image</span></a><a class="tool-link current" href="resize-image.html"><span class="ic">📐</span><b>Resize Image</b><span>WhatsApp DP, Instagram, passport size</span></a></div>
+  </section>
+
+  <!-- Ad slot 2 (end of content) -->
+  <div class="ad">Advertisement</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><b>JustCompressIt</b><span>Free, private file tools.<br>Your files never leave your device.</span></div>
+      <div><b>Tools</b><a href="index.html">Compress Image & PDF</a><a href="jpg-to-pdf.html">JPG to PDF</a><a href="pdf-to-jpg.html">PDF to JPG</a><a href="resize-image.html">Resize Image</a></div>
+      <div><b>Company</b><a href="guides.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a></div>
+    </div>
+    <div class="copy">© <span id="yr"></span> JustCompressIt</div>
+  </div>
+</footer>
+
+<script src="common.js"></script>
+<script>
+(() => {
+  const { $, baseName, download, setupDrop, decodeImage, isImage } = CK;
+
+  const PRESETS = [
+    { id: 'whatsapp',   label: 'WhatsApp DP',        w: 500,  h: 500,  circle: true },
+    { id: 'wa-status',  label: 'WhatsApp Status',    w: 1080, h: 1920 },
+    { id: 'ig-profile', label: 'Instagram profile',  w: 320,  h: 320,  circle: true },
+    { id: 'ig-post',    label: 'Instagram post',     w: 1080, h: 1080 },
+    { id: 'ig-portrait',label: 'Instagram portrait', w: 1080, h: 1350 },
+    { id: 'ig-story',   label: 'Story / Reel',       w: 1080, h: 1920 },
+    { id: 'fb-profile', label: 'Facebook profile',   w: 720,  h: 720,  circle: true },
+    { id: 'fb-cover',   label: 'Facebook cover',     w: 851,  h: 315 },
+    { id: 'yt-thumb',   label: 'YouTube thumbnail',  w: 1280, h: 720 },
+    { id: 'linkedin',   label: 'LinkedIn photo',     w: 400,  h: 400,  circle: true },
+    { id: 'passport',   label: 'Passport 35×45 mm',  w: 413,  h: 531 },
+    { id: 'custom',     label: 'Custom size',        w: 0,    h: 0 },
+  ];
+
+  const S = { img: null, name: 'photo', preset: PRESETS[0], mode: 'crop', bg: 'blur', zoom: 1, px: 0, py: 0 };
+  const cv = $('cv'), ctx = cv.getContext('2d');
+
+  // ----- build preset chips (pick from #hash if present, e.g. resize-image.html#instagram) -----
+  const fromHash = { whatsapp: 'whatsapp', instagram: 'ig-profile', passport: 'passport', youtube: 'yt-thumb', facebook: 'fb-profile' }[location.hash.slice(1)];
+  if (fromHash) S.preset = PRESETS.find(p => p.id === fromHash);
+  PRESETS.forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'chip'; b.dataset.id = p.id;
+    b.innerHTML = p.label + (p.w ? `<small>${p.w}×${p.h}</small>` : '');
+    b.onclick = () => { S.preset = p; S.px = S.py = 0; syncUI(); draw(); };
+    $('presets').appendChild(b);
+  });
+
+  function size() {
+    if (S.preset.id === 'custom') return [Math.min(8000, Math.max(16, +$('cw').value || 1000)), Math.min(8000, Math.max(16, +$('ch').value || 1000))];
+    return [S.preset.w, S.preset.h];
+  }
+
+  function syncUI() {
+    document.querySelectorAll('#presets .chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.id === S.preset.id));
+    document.querySelectorAll('#modes .chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.mode === S.mode));
+    document.querySelectorAll('#bgs .swatch').forEach(c => c.setAttribute('aria-pressed', c.dataset.bg === S.bg || (c.dataset.bg === 'custom' && S.bg === $('pick').value)));
+    $('customRow').classList.toggle('hidden', S.preset.id !== 'custom');
+    $('bgWrap').classList.toggle('hidden', S.mode !== 'fit');
+    $('circle').classList.toggle('hidden', !S.preset.circle);
+    $('frame').classList.toggle('clip', !!S.preset.circle);
+    const [W, H] = size();
+    $('outInfo').textContent = `Output: ${W} × ${H} px` + (S.preset.circle ? ' · the circle shows how it will look as a profile picture' : '');
+  }
+
+  // ----- drawing -----
+  function blurredCover(c, W, H) {
+    const img = S.img, s = Math.max(W / img.width, H / img.height);
+    const tiny = document.createElement('canvas');
+    const k = 28 / Math.max(W, H);
+    tiny.width = Math.max(2, Math.round(W * k)); tiny.height = Math.max(2, Math.round(H * k));
+    const t = tiny.getContext('2d');
+    const dw = img.width * s * k, dh = img.height * s * k;
+    t.drawImage(img, (tiny.width - dw) / 2, (tiny.height - dh) / 2, dw, dh);
+    c.imageSmoothingEnabled = true; c.imageSmoothingQuality = 'high';
+    c.drawImage(tiny, 0, 0, W, H);
+    c.fillStyle = 'rgba(0,0,0,.12)'; c.fillRect(0, 0, W, H);
+  }
+
+  function clampPan(W, H, dw, dh) {
+    if (S.mode === 'crop') {
+      const mx = Math.max(0, (dw - W) / 2 / W), my = Math.max(0, (dh - H) / 2 / H);
+      S.px = Math.max(-mx, Math.min(mx, S.px)); S.py = Math.max(-my, Math.min(my, S.py));
+    } else {
+      S.px = Math.max(-.5, Math.min(.5, S.px)); S.py = Math.max(-.5, Math.min(.5, S.py));
+    }
+  }
+
+  function render(c, W, H, transparentOK) {
+    const img = S.img;
+    c.clearRect(0, 0, W, H);
+    const base = S.mode === 'crop' ? Math.max(W / img.width, H / img.height) : Math.min(W / img.width, H / img.height);
+    const s = base * S.zoom, dw = img.width * s, dh = img.height * s;
+    clampPan(W, H, dw, dh);
+    if (S.mode === 'fit') {
+      if (S.bg === 'blur') blurredCover(c, W, H);
+      else { c.fillStyle = S.bg; c.fillRect(0, 0, W, H); }
+    } else if (!transparentOK) { c.fillStyle = '#fff'; c.fillRect(0, 0, W, H); }
+    c.imageSmoothingQuality = 'high';
+    c.drawImage(img, (W - dw) / 2 + S.px * W, (H - dh) / 2 + S.py * H, dw, dh);
+  }
+
+  function draw() {
+    if (!S.img) return;
+    const [W, H] = size();
+    const k = Math.min(1, 900 / Math.max(W, H));          // preview at most 900px
+    cv.width = Math.round(W * k); cv.height = Math.round(H * k);
+    render(ctx, cv.width, cv.height, true);
+    syncUI();
+  }
+
+  // ----- events -----
+  setupDrop('drop', 'input', isImage, async files => {
+    try {
+      S.img = await decodeImage(files[0]);
+      S.name = baseName(files[0].name); S.zoom = 1; S.px = S.py = 0; $('zoom').value = 100;
+      $('drop').classList.add('hidden'); $('editor').classList.remove('hidden');
+      draw();
+    } catch { alert('Sorry, this image could not be opened.'); }
+  });
+  $('change').onclick = () => $('input').click();
+  document.querySelectorAll('#modes .chip').forEach(b => b.onclick = () => { S.mode = b.dataset.mode; S.px = S.py = 0; draw(); });
+  document.querySelectorAll('#bgs .swatch').forEach(b => b.onclick = () => { if (b.dataset.bg !== 'custom') { S.bg = b.dataset.bg; draw(); } });
+  $('pick').addEventListener('input', () => { S.bg = $('pick').value; draw(); });
+  $('zoom').addEventListener('input', () => { S.zoom = $('zoom').value / 100; draw(); });
+  ['cw', 'ch'].forEach(id => $(id).addEventListener('input', draw));
+
+  let drag = null;
+  cv.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, px: S.px, py: S.py }; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove', e => {
+    if (!drag) return;
+    S.px = drag.px + (e.clientX - drag.x) / cv.clientWidth;
+    S.py = drag.py + (e.clientY - drag.y) / cv.clientHeight;
+    draw();
+  });
+  ['pointerup', 'pointercancel'].forEach(ev => cv.addEventListener(ev, () => drag = null));
+  cv.addEventListener('wheel', e => {
+    e.preventDefault();
+    S.zoom = Math.max(1, Math.min(4, S.zoom * (e.deltaY < 0 ? 1.08 : 1 / 1.08)));
+    $('zoom').value = Math.round(S.zoom * 100); draw();
+  }, { passive: false });
+
+  $('dl').onclick = () => {
+    const [W, H] = size(), mime = $('fmt').value;
+    const c = document.createElement('canvas'); c.width = W; c.height = H;
+    render(c.getContext('2d'), W, H, mime === 'image/png');
+    c.toBlob(b => download(b, `${S.name}-${S.preset.id}-${W}x${H}.${mime === 'image/png' ? 'png' : 'jpg'}`), mime, 0.92);
+  };
+
+  syncUI();
+})();
+
+</script>
+</body>
+</html>

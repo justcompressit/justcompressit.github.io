@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF to JPG Converter – Save PDF Pages as Images Free | JustCompressIt</title>
+<meta name="description" content="Convert PDF to JPG or PNG online for free. Turn every page of a PDF into a high-quality image, choose pages and download all as ZIP. Private – files never leave your device.">
+<meta property="og:title" content="PDF to JPG Converter – Save PDF Pages as Images Free | JustCompressIt">
+<meta property="og:description" content="Convert PDF to JPG or PNG online for free. Turn every page of a PDF into a high-quality image, choose pages and download all as ZIP. Private – files never leave your device.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 12l7 7 7-7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- ===== Google AdSense: paste your AdSense <script> here after approval ===== -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do I convert a PDF to JPG images?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose your PDF, select JPG and a quality level, then press Convert to images. Each page appears as a picture you can download one by one or all together as a ZIP."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I convert only some pages?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Type the pages you want in the Pages box, for example “2” or “1-3, 7”. Leave it empty to convert the whole PDF."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which quality should I choose?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "High (recommended) is sharp enough for phones and screens. Choose Very high if you plan to print the images, or Normal for the smallest files."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "JPG or PNG – which is better?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "JPG files are smaller and accepted everywhere. PNG keeps text perfectly sharp but files are larger."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it work with password-protected PDFs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Protected PDFs can’t be opened without the password. Remove the protection first, then convert."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></i>JustCompressIt</a>
+    <nav aria-label="Tools"><a href="index.html">Compress</a><a href="jpg-to-pdf.html">JPG to PDF</a><a href="pdf-to-jpg.html" class=on>PDF to JPG</a><a href="resize-image.html">Resize Image</a><a href="guides.html">Guides</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>PDF to JPG Converter</h1>
+    <p>Turn every page of a PDF into a <strong>high-quality JPG or PNG image</strong> – handy for WhatsApp, social media, slides and forms that only accept pictures.</p>
+    <div class="badges"><span class="badge">🔒 Files never leave your device</span><span class="badge">Free</span><span class="badge">No sign-up</span><span class="badge">No watermark</span></div>
+  </div>
+
+  <div class="card">
+    <div class="drop" id="drop" tabindex="0">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+      <strong>Drop a PDF here or click to choose</strong>
+      <span>Every page becomes a separate image</span>
+      <input type="file" id="input" accept="application/pdf,.pdf" hidden>
+    </div>
+
+    <div class="list" id="file"></div>
+
+    <div class="opts">
+      <div class="opt">
+        <label for="fmt">Image format</label>
+        <select id="fmt">
+          <option value="image/jpeg" selected>JPG</option>
+          <option value="image/png">PNG (sharper, bigger)</option>
+        </select>
+      </div>
+      <div class="opt">
+        <label for="dpi">Image quality</label>
+        <select id="dpi">
+          <option value="100">Normal – small files</option>
+          <option value="150" selected>High (recommended)</option>
+          <option value="220">Very high – for printing</option>
+        </select>
+      </div>
+      <div class="opt">
+        <label for="range">Pages</label>
+        <input type="text" id="range" placeholder="All pages, or e.g. 1-3, 5">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="go" disabled>Convert to images</button>
+      <button class="btn ghost hidden" id="zip">Download all (ZIP)</button>
+    </div>
+    <div class="progress hidden" id="prog"><i></i></div>
+    <div class="err" id="err"></div>
+    <div class="pages" id="pages"></div>
+  </div>
+
+
+  <!-- Ad slot 1 (below tool) -->
+  <div class="ad">Advertisement</div>
+
+  <section class="content">
+    <h2>How to convert PDF to JPG</h2>
+    <div class="steps"><div class="step"><b>1</b><h3 style="margin:0 0 4px">Choose your PDF</h3>Drop the file in or tap to pick it. We show how many pages it has.</div><div class="step"><b>2</b><h3 style="margin:0 0 4px">Pick quality and pages</h3>Leave pages empty to convert all, or type something like 1-3, 5.</div><div class="step"><b>3</b><h3 style="margin:0 0 4px">Download images</h3>Save single pages, or download every page together as one ZIP file.</div></div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+<h3>How do I convert a PDF to JPG images?</h3>
+<p>Choose your PDF, select JPG and a quality level, then press Convert to images. Each page appears as a picture you can download one by one or all together as a ZIP.</p>
+<h3>Can I convert only some pages?</h3>
+<p>Yes. Type the pages you want in the Pages box, for example “2” or “1-3, 7”. Leave it empty to convert the whole PDF.</p>
+<h3>Which quality should I choose?</h3>
+<p>High (recommended) is sharp enough for phones and screens. Choose Very high if you plan to print the images, or Normal for the smallest files.</p>
+<h3>JPG or PNG – which is better?</h3>
+<p>JPG files are smaller and accepted everywhere. PNG keeps text perfectly sharp but files are larger.</p>
+<h3>Does it work with password-protected PDFs?</h3>
+<p>Protected PDFs can’t be opened without the password. Remove the protection first, then convert.</p>
+
+    <h2>All free tools</h2>
+<div class="tools-grid"><a class="tool-link" href="index.html"><span class="ic">🗜️</span><b>Compress Image & PDF</b><span>Shrink files to 50 KB, 100 KB, 200 KB…</span></a><a class="tool-link" href="jpg-to-pdf.html"><span class="ic">📄</span><b>JPG to PDF</b><span>Turn photos and scans into one PDF</span></a><a class="tool-link current" href="pdf-to-jpg.html"><span class="ic">🖼️</span><b>PDF to JPG</b><span>Save every PDF page as an image</span></a><a class="tool-link" href="resize-image.html"><span class="ic">📐</span><b>Resize Image</b><span>WhatsApp DP, Instagram, passport size</span></a></div>
+  </section>
+
+  <!-- Ad slot 2 (end of content) -->
+  <div class="ad">Advertisement</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><b>JustCompressIt</b><span>Free, private file tools.<br>Your files never leave your device.</span></div>
+      <div><b>Tools</b><a href="index.html">Compress Image & PDF</a><a href="jpg-to-pdf.html">JPG to PDF</a><a href="pdf-to-jpg.html">PDF to JPG</a><a href="resize-image.html">Resize Image</a></div>
+      <div><b>Company</b><a href="guides.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a></div>
+    </div>
+    <div class="copy">© <span id="yr"></span> JustCompressIt</div>
+  </div>
+</footer>
+
+<script src="common.js"></script>
+<script src="lib/pdf.min.js"></script>
+<script src="lib/jszip.min.js"></script>
+<script>
+(() => {
+  const { $, fmt, esc, baseName, tick, download, setupDrop, isPdf, parseRanges, initPdfJs } = CK;
+  initPdfJs();
+  let file = null, pdf = null, results = [];
+
+  setupDrop('drop', 'input', isPdf, async files => {
+    file = files[0]; results = [];
+    $('pages').innerHTML = ''; $('err').textContent = ''; $('zip').classList.add('hidden');
+    $('file').innerHTML = `<div class="item"><div class="thumb">PDF</div><div style="min-width:0"><div class="name">${esc(file.name)}</div><div class="meta" id="fmeta">${fmt(file.size)} · reading…</div></div><div></div></div>`;
+    try {
+      pdf = await pdfjsLib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
+      $('fmeta').textContent = `${fmt(file.size)} · ${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''}`;
+      $('go').disabled = false;
+    } catch (e) {
+      pdf = null; $('go').disabled = true;
+      $('fmeta').innerHTML = e && e.name === 'PasswordException'
+        ? '<b class="bad">This PDF is password-protected</b>' : '<b class="bad">Couldn\'t read this PDF</b>';
+    }
+  });
+
+  $('go').onclick = async () => {
+    if (!pdf) return;
+    const mime = $('fmt').value, scale = +$('dpi').value / 72, ext = mime === 'image/png' ? 'png' : 'jpg';
+    const raw = $('range').value.trim();
+    const nums = raw ? parseRanges(raw, pdf.numPages) : Array.from({ length: pdf.numPages }, (_, i) => i + 1);
+    $('err').textContent = '';
+    if (!nums || !nums.length) { $('err').textContent = `Please enter pages like "1-3, 5" (this PDF has ${pdf.numPages} pages).`; return; }
+
+    $('go').disabled = true; $('go').textContent = 'Converting…'; $('zip').classList.add('hidden');
+    $('prog').classList.remove('hidden'); $('pages').innerHTML = ''; results = [];
+    const canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
+    for (let k = 0; k < nums.length; k++) {
+      const n = nums[k];
+      const page = await pdf.getPage(n);
+      const vp = page.getViewport({ scale });
+      canvas.width = Math.ceil(vp.width); canvas.height = Math.ceil(vp.height);
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+      await page.render({ canvasContext: ctx, viewport: vp }).promise;
+      const blob = await new Promise(r => canvas.toBlob(r, mime, 0.9));
+      const name = `${baseName(file.name)}-page-${n}.${ext}`;
+      results.push({ blob, name });
+      const url = URL.createObjectURL(blob);
+      const el = document.createElement('div'); el.className = 'pg';
+      el.innerHTML = `<img src="${url}" alt="Page ${n}">Page ${n} · ${fmt(blob.size)}<button class="btn sm">Download</button>`;
+      el.querySelector('button').onclick = () => download(blob, name);
+      $('pages').appendChild(el);
+      page.cleanup();
+      $('prog').firstElementChild.style.width = ((k + 1) / nums.length * 100) + '%';
+      await tick();
+    }
+    $('go').disabled = false; $('go').textContent = 'Convert to images';
+    $('zip').classList.toggle('hidden', results.length < 2);
+    setTimeout(() => $('prog').classList.add('hidden'), 600);
+  };
+
+  $('zip').onclick = async () => {
+    $('zip').disabled = true; $('zip').textContent = 'Zipping…';
+    const zip = new JSZip();
+    results.forEach(r => zip.file(r.name, r.blob));
+    const blob = await zip.generateAsync({ type: 'blob' });
+    download(blob, `${baseName(file.name)}-images.zip`);
+    $('zip').disabled = false; $('zip').textContent = 'Download all (ZIP)';
+  };
+})();
+
+</script>
+</body>
+</html>

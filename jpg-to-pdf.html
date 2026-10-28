@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JPG to PDF Converter – Combine Photos into One PDF Free | JustCompressIt</title>
+<meta name="description" content="Convert JPG, PNG and WebP images to PDF online for free. Combine multiple photos or scanned documents into one PDF, set page order, A4 size and margins. No upload, no watermark.">
+<meta property="og:title" content="JPG to PDF Converter – Combine Photos into One PDF Free | JustCompressIt">
+<meta property="og:description" content="Convert JPG, PNG and WebP images to PDF online for free. Combine multiple photos or scanned documents into one PDF, set page order, A4 size and margins. No upload, no watermark.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 12l7 7 7-7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- ===== Google AdSense: paste your AdSense <script> here after approval ===== -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do I combine multiple JPG files into one PDF?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Select all your images at once (or add them one by one), arrange the order with the arrow buttons and press Convert to PDF. Every image becomes one page of a single PDF file."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I convert photos of documents taken on my phone?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Phone photos of ID cards, certificates, receipts and handwritten notes work well. Choose A4 page size so the PDF looks like a normal scanned document."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are my images uploaded anywhere?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The PDF is created inside your browser, so your photos never leave your device."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How can I make the PDF smaller?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose “Smallest file” before converting, or use our free PDF compressor to reduce it to 200 KB, 500 KB or 1 MB."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is there a limit on the number of images?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "There is no fixed limit. Very large batches depend on your device’s memory; 50+ photos usually work fine on a modern phone or computer."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></i>JustCompressIt</a>
+    <nav aria-label="Tools"><a href="index.html">Compress</a><a href="jpg-to-pdf.html" class=on>JPG to PDF</a><a href="pdf-to-jpg.html">PDF to JPG</a><a href="resize-image.html">Resize Image</a><a href="guides.html">Guides</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>JPG to PDF Converter</h1>
+    <p>Combine photos, scanned documents and screenshots into <strong>one PDF</strong> in seconds – perfect for assignments, ID copies, receipts, certificates and job applications.</p>
+    <div class="badges"><span class="badge">🔒 Files never leave your device</span><span class="badge">Free</span><span class="badge">No sign-up</span><span class="badge">No watermark</span></div>
+  </div>
+
+  <div class="card">
+    <div class="drop" id="drop" tabindex="0">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>
+      <strong>Drop photos here or click to choose</strong>
+      <span>JPG, PNG, WebP · add as many as you like · use ↑ ↓ to set page order</span>
+      <input type="file" id="input" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp" multiple hidden>
+    </div>
+
+    <div class="list" id="list"></div>
+
+    <div class="opts">
+      <div class="opt">
+        <label for="size">Page size</label>
+        <select id="size">
+          <option value="a4" selected>A4</option>
+          <option value="letter">US Letter</option>
+          <option value="legal">Legal</option>
+          <option value="fit">Same as photo (no white border)</option>
+        </select>
+      </div>
+      <div class="opt">
+        <label for="orient">Orientation</label>
+        <select id="orient">
+          <option value="auto" selected>Auto (match each photo)</option>
+          <option value="p">Portrait</option>
+          <option value="l">Landscape</option>
+        </select>
+      </div>
+      <div class="opt">
+        <label for="margin">Margin</label>
+        <select id="margin">
+          <option value="0">None</option>
+          <option value="18" selected>Small</option>
+          <option value="40">Large</option>
+        </select>
+      </div>
+      <div class="opt">
+        <label for="quality">File size</label>
+        <select id="quality">
+          <option value="high">High quality</option>
+          <option value="normal" selected>Balanced (recommended)</option>
+          <option value="small">Smallest file</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="go" disabled>Convert to PDF</button>
+      <button class="btn ghost hidden" id="add">+ Add more photos</button>
+      <button class="btn ghost hidden" id="clear">Clear</button>
+    </div>
+    <div class="progress hidden" id="prog"><i></i></div>
+    <div class="summary" id="result"></div>
+  </div>
+
+
+  <!-- Ad slot 1 (below tool) -->
+  <div class="ad">Advertisement</div>
+
+  <section class="content">
+    <h2>How to convert JPG to PDF</h2>
+    <div class="steps"><div class="step"><b>1</b><h3 style="margin:0 0 4px">Add your photos</h3>Pick one or many images from your phone or computer. Use ↑ ↓ to put the pages in the right order.</div><div class="step"><b>2</b><h3 style="margin:0 0 4px">Choose page settings</h3>A4 is standard for documents. Pick “Same as photo” if you don’t want white borders.</div><div class="step"><b>3</b><h3 style="margin:0 0 4px">Download your PDF</h3>Press Convert and download. Need it smaller? Send it straight to the PDF compressor.</div></div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+<h3>How do I combine multiple JPG files into one PDF?</h3>
+<p>Select all your images at once (or add them one by one), arrange the order with the arrow buttons and press Convert to PDF. Every image becomes one page of a single PDF file.</p>
+<h3>Can I convert photos of documents taken on my phone?</h3>
+<p>Yes. Phone photos of ID cards, certificates, receipts and handwritten notes work well. Choose A4 page size so the PDF looks like a normal scanned document.</p>
+<h3>Are my images uploaded anywhere?</h3>
+<p>No. The PDF is created inside your browser, so your photos never leave your device.</p>
+<h3>How can I make the PDF smaller?</h3>
+<p>Choose “Smallest file” before converting, or use our free <a href="index.html#pdf">PDF compressor</a> to reduce it to 200 KB, 500 KB or 1 MB.</p>
+<h3>Is there a limit on the number of images?</h3>
+<p>There is no fixed limit. Very large batches depend on your device’s memory; 50+ photos usually work fine on a modern phone or computer.</p>
+
+    <h2>All free tools</h2>
+<div class="tools-grid"><a class="tool-link" href="index.html"><span class="ic">🗜️</span><b>Compress Image & PDF</b><span>Shrink files to 50 KB, 100 KB, 200 KB…</span></a><a class="tool-link current" href="jpg-to-pdf.html"><span class="ic">📄</span><b>JPG to PDF</b><span>Turn photos and scans into one PDF</span></a><a class="tool-link" href="pdf-to-jpg.html"><span class="ic">🖼️</span><b>PDF to JPG</b><span>Save every PDF page as an image</span></a><a class="tool-link" href="resize-image.html"><span class="ic">📐</span><b>Resize Image</b><span>WhatsApp DP, Instagram, passport size</span></a></div>
+  </section>
+
+  <!-- Ad slot 2 (end of content) -->
+  <div class="ad">Advertisement</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><b>JustCompressIt</b><span>Free, private file tools.<br>Your files never leave your device.</span></div>
+      <div><b>Tools</b><a href="index.html">Compress Image & PDF</a><a href="jpg-to-pdf.html">JPG to PDF</a><a href="pdf-to-jpg.html">PDF to JPG</a><a href="resize-image.html">Resize Image</a></div>
+      <div><b>Company</b><a href="guides.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a></div>
+    </div>
+    <div class="copy">© <span id="yr"></span> JustCompressIt</div>
+  </div>
+</footer>
+
+<script src="common.js"></script>
+<script src="lib/jspdf.umd.min.js"></script>
+<script>
+(() => {
+  const { $, fmt, tick, download, setupDrop, decodeImage, isImage, fileList } = CK;
+  const items = [];
+  let out = null;
+
+  const list = fileList($('list'), items, { onChange: () => {
+    $('go').disabled = !items.length;
+    $('add').classList.toggle('hidden', !items.length);
+    $('clear').classList.toggle('hidden', !items.length);
+    $('result').style.display = 'none';
+  }});
+
+  const addFiles = files => {
+    files.forEach(file => items.push({ file, thumb: URL.createObjectURL(file) }));
+    list.render();
+  };
+  setupDrop('drop', 'input', isImage, addFiles);
+  $('add').onclick = () => $('input').click();
+  $('clear').onclick = () => { items.length = 0; list.render(); };
+
+  const PAGE = { a4: [595.28, 841.89], letter: [612, 792], legal: [612, 1008] };
+  const QUAL = { high: { max: 3000, q: 0.92 }, normal: { max: 2000, q: 0.8 }, small: { max: 1400, q: 0.6 } };
+
+  $('go').onclick = async () => {
+    const size = $('size').value, orient = $('orient').value, margin = +$('margin').value, Q = QUAL[$('quality').value];
+    const { jsPDF } = window.jspdf;
+    let doc = null;
+    $('go').disabled = true; $('go').textContent = 'Converting…';
+    $('prog').classList.remove('hidden'); $('prog').firstElementChild.style.width = '0';
+    $('result').style.display = 'none';
+    try {
+      for (let i = 0; i < items.length; i++) {
+        const img = await decodeImage(items[i].file);
+        // downscale very large photos so the PDF stays reasonable
+        const s = Math.min(1, Q.max / Math.max(img.width, img.height));
+        const w = Math.round(img.width * s), h = Math.round(img.height * s);
+        const c = document.createElement('canvas'); c.width = w; c.height = h;
+        const ctx = c.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h); ctx.drawImage(img, 0, 0, w, h);
+        const data = c.toDataURL('image/jpeg', Q.q);
+
+        let pw, ph, m = margin;
+        if (size === 'fit') { pw = w * 0.75; ph = h * 0.75; m = 0; }           // px → pt at 96 dpi
+        else {
+          [pw, ph] = PAGE[size];
+          const land = orient === 'l' || (orient === 'auto' && w > h);
+          if (land) [pw, ph] = [ph, pw];
+        }
+        const o = pw > ph ? 'l' : 'p';
+        if (!doc) doc = new jsPDF({ unit: 'pt', format: [pw, ph], orientation: o, compress: true });
+        else doc.addPage([pw, ph], o);
+        const k = Math.min((pw - 2 * m) / w, (ph - 2 * m) / h);
+        const dw = w * k, dh = h * k;
+        doc.addImage(data, 'JPEG', (pw - dw) / 2, (ph - dh) / 2, dw, dh, undefined, 'FAST');
+        $('prog').firstElementChild.style.width = ((i + 1) / items.length * 100) + '%';
+        await tick();
+      }
+      out = doc.output('blob');
+      const name = items.length === 1 ? items[0].file.name.replace(/\.[^.]+$/, '') + '.pdf' : 'photos.pdf';
+      $('result').style.display = 'block';
+      $('result').innerHTML = `✅ Your PDF is ready: <b>${items.length} page${items.length > 1 ? 's' : ''}, ${fmt(out.size)}</b>
+        <div class="actions" style="margin-top:10px"><button class="btn" id="dl">Download PDF</button>
+        <a class="btn ghost" href="index.html#pdf">Make it smaller</a></div>`;
+      $('dl').onclick = () => download(out, name);
+    } catch (e) {
+      $('result').style.display = 'block';
+      $('result').innerHTML = '<span class="err">Sorry, one of the images could not be read. Try removing it and converting again.</span>';
+    }
+    $('go').disabled = false; $('go').textContent = 'Convert to PDF';
+    setTimeout(() => $('prog').classList.add('hidden'), 600);
+  };
+})();
+
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://compresskaro.github.io/sitemap.xml
+Sitemap: https://justcompressit.github.io/sitemap.xml
